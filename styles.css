@@ -27,7 +27,7 @@ body.contact #addedVideos{
   opacity:1;
 }
 
-#addedVideos video{
+#addedVideos > *{
   opacity:0;
   transition: opacity 1s;
 }
@@ -35,21 +35,21 @@ body.contact #addedVideos{
 #addedVideos video:nth-child(1){
   opacity:1;
 }*/
-#addedVideos video.show:nth-child(1){
+#addedVideos .show:nth-child(1){
   opacity:.5;
 }
-#addedVideos video.show:nth-child(2){
+#addedVideos .show:nth-child(2){
   opacity:.33333;
 }
-#addedVideos video.show:nth-child(3){
+#addedVideos .show:nth-child(3){
   opacity:.25;
 }
-#addedVideos video.show:nth-child(4){
+#addedVideos .show:nth-child(4){
   opacity:.2;
 }
-#addedVideos video.show:nth-child(5){
+#addedVideos .show:nth-child(5){
   opacity:.16666;
 }
-#addedVideos video.show:nth-child(6){
+#addedVideos .show:nth-child(6){
   opacity: .14286;
 }
