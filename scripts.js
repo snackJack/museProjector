@@ -1,17 +1,29 @@
 var seedVideo = document.getElementById("seed");
+var currentVideo = document.getElementById("current");
+var STREAM_SERVER = '192.168.2.68';
+
+currentVideo.setAttribute('src', `http://${STREAM_SERVER}:8080/?action=stream`);
 
 var videoList = [seedVideo];
+var spacePressed = false;
 
 function spaceDown(event) {
   var space = event.keyCode === 0 || event.keyCode === 32;
   if(space){
     document.body.className = 'contact';
+    if (!spacePressed) {
+      var curTime = Math.floor(seedVideo.currentTime);
+      fetch(`http://${STREAM_SERVER}:3000/start?time=${curTime}`);
+      spacePressed = true;
+    }
   }
 }
 function spaceUp(event) {
   var space = event.keyCode === 0 || event.keyCode === 32;
   if(space){
     document.body.className = '';
+    fetch(`http://${STREAM_SERVER}:3000/stop`);
+    spacePressed = false;
   }
 }
 
