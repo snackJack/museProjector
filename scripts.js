@@ -1,6 +1,6 @@
 var seedVideo = document.getElementById("seed");
 var currentVideo = document.getElementById("current");
-var STREAM_SERVER = '192.168.2.68';
+var STREAM_SERVER = '169.254.112.89';
 
 currentVideo.setAttribute('src', `http://${STREAM_SERVER}:8080/?action=stream`);
 
